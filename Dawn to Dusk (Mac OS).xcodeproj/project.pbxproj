@@ -1,0 +1,659 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B70F3BF11DCE3C86006D63A0 /* EventMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70F3BF01DCE3C86006D63A0 /* EventMonitor.swift */; };
+		B78EAF5B1DD385F5001626DE /* WeatherIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78EAF5A1DD385F5001626DE /* WeatherIcon.swift */; };
+		B7BDA6A31DCA5CA400EBAB4B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BDA6A21DCA5CA400EBAB4B /* AppDelegate.swift */; };
+		B7BDA6A51DCA5CA400EBAB4B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7BDA6A41DCA5CA400EBAB4B /* Assets.xcassets */; };
+		B7BDA6A81DCA5CA400EBAB4B /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7BDA6A61DCA5CA400EBAB4B /* MainMenu.xib */; };
+		B7BDA6B31DCA5CA400EBAB4B /* Dawn_to_Dusk__Mac_OS_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BDA6B21DCA5CA400EBAB4B /* Dawn_to_Dusk__Mac_OS_Tests.swift */; };
+		B7BDA6BE1DCA5CA400EBAB4B /* Dawn_to_Dusk__Mac_OS_UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BDA6BD1DCA5CA400EBAB4B /* Dawn_to_Dusk__Mac_OS_UITests.swift */; };
+		B7BDA6CD1DCA5D1800EBAB4B /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BDA6CB1DCA5D1800EBAB4B /* WeatherViewController.swift */; };
+		B7BDA6CE1DCA5D1800EBAB4B /* WeatherViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7BDA6CC1DCA5D1800EBAB4B /* WeatherViewController.xib */; };
+		B7BDA6D11DCA5E4800EBAB4B /* StatusMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BDA6CF1DCA5E4800EBAB4B /* StatusMenuController.swift */; };
+		B7BDA6DD1DCA624000EBAB4B /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BDA6D51DCA624000EBAB4B /* Alert.swift */; };
+		B7BDA6DE1DCA624000EBAB4B /* DarkSkyForecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BDA6D61DCA624000EBAB4B /* DarkSkyForecast.swift */; };
+		B7BDA6DF1DCA624000EBAB4B /* DataBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BDA6D71DCA624000EBAB4B /* DataBlock.swift */; };
+		B7BDA6E01DCA624000EBAB4B /* DataPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BDA6D81DCA624000EBAB4B /* DataPoint.swift */; };
+		B7BDA6E11DCA624000EBAB4B /* Flags.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BDA6D91DCA624000EBAB4B /* Flags.swift */; };
+		B7BDA6E21DCA624000EBAB4B /* ForecastInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BDA6DA1DCA624000EBAB4B /* ForecastInfo.swift */; };
+		B7BDA6E31DCA624000EBAB4B /* HttpAddressBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BDA6DB1DCA624000EBAB4B /* HttpAddressBuilder.swift */; };
+		B7BDA6E41DCA624000EBAB4B /* WeatherJSONProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BDA6DC1DCA624000EBAB4B /* WeatherJSONProvider.swift */; };
+		B7BDA6E61DCA779300EBAB4B /* BackgroundController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BDA6E51DCA779300EBAB4B /* BackgroundController.swift */; };
+		B7BDA6EC1DCA89FD00EBAB4B /* Chart.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BDA6E81DCA89FD00EBAB4B /* Chart.swift */; };
+		B7BDA6ED1DCA89FD00EBAB4B /* ChartColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BDA6E91DCA89FD00EBAB4B /* ChartColors.swift */; };
+		B7BDA6EE1DCA89FD00EBAB4B /* ChartSeries.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BDA6EA1DCA89FD00EBAB4B /* ChartSeries.swift */; };
+		B7BDA6EF1DCA89FD00EBAB4B /* CubicCurveAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BDA6EB1DCA89FD00EBAB4B /* CubicCurveAlgorithm.swift */; };
+		B7FF14A51DCFE3AA00D6E3FA /* DayCollectionItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FF14A31DCFE3AA00D6E3FA /* DayCollectionItem.swift */; };
+		B7FF14A61DCFE3AA00D6E3FA /* DayCollectionItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7FF14A41DCFE3AA00D6E3FA /* DayCollectionItem.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B7BDA6AF1DCA5CA400EBAB4B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B7BDA6971DCA5CA400EBAB4B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B7BDA69E1DCA5CA400EBAB4B;
+			remoteInfo = "Dawn to Dusk (Mac OS)";
+		};
+		B7BDA6BA1DCA5CA400EBAB4B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B7BDA6971DCA5CA400EBAB4B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B7BDA69E1DCA5CA400EBAB4B;
+			remoteInfo = "Dawn to Dusk (Mac OS)";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		B70F3BF01DCE3C86006D63A0 /* EventMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventMonitor.swift; sourceTree = "<group>"; };
+		B78EAF5A1DD385F5001626DE /* WeatherIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherIcon.swift; sourceTree = "<group>"; };
+		B7BDA69F1DCA5CA400EBAB4B /* Dawn to Dusk (Mac OS).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dawn to Dusk (Mac OS).app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B7BDA6A21DCA5CA400EBAB4B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B7BDA6A41DCA5CA400EBAB4B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B7BDA6A71DCA5CA400EBAB4B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		B7BDA6A91DCA5CA400EBAB4B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B7BDA6AE1DCA5CA400EBAB4B /* Dawn to Dusk (Mac OS)Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Dawn to Dusk (Mac OS)Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B7BDA6B21DCA5CA400EBAB4B /* Dawn_to_Dusk__Mac_OS_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dawn_to_Dusk__Mac_OS_Tests.swift; sourceTree = "<group>"; };
+		B7BDA6B41DCA5CA400EBAB4B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B7BDA6B91DCA5CA400EBAB4B /* Dawn to Dusk (Mac OS)UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Dawn to Dusk (Mac OS)UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B7BDA6BD1DCA5CA400EBAB4B /* Dawn_to_Dusk__Mac_OS_UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dawn_to_Dusk__Mac_OS_UITests.swift; sourceTree = "<group>"; };
+		B7BDA6BF1DCA5CA400EBAB4B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B7BDA6CB1DCA5D1800EBAB4B /* WeatherViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
+		B7BDA6CC1DCA5D1800EBAB4B /* WeatherViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WeatherViewController.xib; sourceTree = "<group>"; };
+		B7BDA6CF1DCA5E4800EBAB4B /* StatusMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusMenuController.swift; sourceTree = "<group>"; };
+		B7BDA6D51DCA624000EBAB4B /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		B7BDA6D61DCA624000EBAB4B /* DarkSkyForecast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DarkSkyForecast.swift; sourceTree = "<group>"; };
+		B7BDA6D71DCA624000EBAB4B /* DataBlock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataBlock.swift; sourceTree = "<group>"; };
+		B7BDA6D81DCA624000EBAB4B /* DataPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataPoint.swift; sourceTree = "<group>"; };
+		B7BDA6D91DCA624000EBAB4B /* Flags.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Flags.swift; sourceTree = "<group>"; };
+		B7BDA6DA1DCA624000EBAB4B /* ForecastInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastInfo.swift; sourceTree = "<group>"; };
+		B7BDA6DB1DCA624000EBAB4B /* HttpAddressBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpAddressBuilder.swift; sourceTree = "<group>"; };
+		B7BDA6DC1DCA624000EBAB4B /* WeatherJSONProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherJSONProvider.swift; sourceTree = "<group>"; };
+		B7BDA6E51DCA779300EBAB4B /* BackgroundController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundController.swift; sourceTree = "<group>"; };
+		B7BDA6E81DCA89FD00EBAB4B /* Chart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chart.swift; sourceTree = "<group>"; };
+		B7BDA6E91DCA89FD00EBAB4B /* ChartColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartColors.swift; sourceTree = "<group>"; };
+		B7BDA6EA1DCA89FD00EBAB4B /* ChartSeries.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartSeries.swift; sourceTree = "<group>"; };
+		B7BDA6EB1DCA89FD00EBAB4B /* CubicCurveAlgorithm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CubicCurveAlgorithm.swift; sourceTree = "<group>"; };
+		B7FF14A31DCFE3AA00D6E3FA /* DayCollectionItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayCollectionItem.swift; sourceTree = "<group>"; };
+		B7FF14A41DCFE3AA00D6E3FA /* DayCollectionItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DayCollectionItem.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B7BDA69C1DCA5CA400EBAB4B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B7BDA6AB1DCA5CA400EBAB4B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B7BDA6B61DCA5CA400EBAB4B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B7BDA6961DCA5CA400EBAB4B = {
+			isa = PBXGroup;
+			children = (
+				B7BDA6A11DCA5CA400EBAB4B /* Dawn to Dusk (Mac OS) */,
+				B7BDA6B11DCA5CA400EBAB4B /* Dawn to Dusk (Mac OS)Tests */,
+				B7BDA6BC1DCA5CA400EBAB4B /* Dawn to Dusk (Mac OS)UITests */,
+				B7BDA6A01DCA5CA400EBAB4B /* Products */,
+				B7BDA6D31DCA622700EBAB4B /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		B7BDA6A01DCA5CA400EBAB4B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B7BDA69F1DCA5CA400EBAB4B /* Dawn to Dusk (Mac OS).app */,
+				B7BDA6AE1DCA5CA400EBAB4B /* Dawn to Dusk (Mac OS)Tests.xctest */,
+				B7BDA6B91DCA5CA400EBAB4B /* Dawn to Dusk (Mac OS)UITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B7BDA6A11DCA5CA400EBAB4B /* Dawn to Dusk (Mac OS) */ = {
+			isa = PBXGroup;
+			children = (
+				B7BDA6A21DCA5CA400EBAB4B /* AppDelegate.swift */,
+				B7BDA6CF1DCA5E4800EBAB4B /* StatusMenuController.swift */,
+				B7BDA6CB1DCA5D1800EBAB4B /* WeatherViewController.swift */,
+				B70F3BF01DCE3C86006D63A0 /* EventMonitor.swift */,
+				B7BDA6CC1DCA5D1800EBAB4B /* WeatherViewController.xib */,
+				B7FF14A21DCFE36000D6E3FA /* Resources */,
+				B7BDA6E51DCA779300EBAB4B /* BackgroundController.swift */,
+				B7BDA6A41DCA5CA400EBAB4B /* Assets.xcassets */,
+				B7BDA6A61DCA5CA400EBAB4B /* MainMenu.xib */,
+				B7BDA6A91DCA5CA400EBAB4B /* Info.plist */,
+			);
+			path = "Dawn to Dusk (Mac OS)";
+			sourceTree = "<group>";
+		};
+		B7BDA6B11DCA5CA400EBAB4B /* Dawn to Dusk (Mac OS)Tests */ = {
+			isa = PBXGroup;
+			children = (
+				B7BDA6B21DCA5CA400EBAB4B /* Dawn_to_Dusk__Mac_OS_Tests.swift */,
+				B7BDA6B41DCA5CA400EBAB4B /* Info.plist */,
+			);
+			path = "Dawn to Dusk (Mac OS)Tests";
+			sourceTree = "<group>";
+		};
+		B7BDA6BC1DCA5CA400EBAB4B /* Dawn to Dusk (Mac OS)UITests */ = {
+			isa = PBXGroup;
+			children = (
+				B7BDA6BD1DCA5CA400EBAB4B /* Dawn_to_Dusk__Mac_OS_UITests.swift */,
+				B7BDA6BF1DCA5CA400EBAB4B /* Info.plist */,
+			);
+			path = "Dawn to Dusk (Mac OS)UITests";
+			sourceTree = "<group>";
+		};
+		B7BDA6D31DCA622700EBAB4B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B7BDA6E71DCA89FD00EBAB4B /* Charts */,
+				B7BDA6D41DCA624000EBAB4B /* SwiftForecast 2.0 */,
+			);
+			name = Frameworks;
+			path = "Dawn to Dusk (Mac OS)";
+			sourceTree = "<group>";
+		};
+		B7BDA6D41DCA624000EBAB4B /* SwiftForecast 2.0 */ = {
+			isa = PBXGroup;
+			children = (
+				B7BDA6D51DCA624000EBAB4B /* Alert.swift */,
+				B7BDA6D61DCA624000EBAB4B /* DarkSkyForecast.swift */,
+				B7BDA6D71DCA624000EBAB4B /* DataBlock.swift */,
+				B7BDA6D81DCA624000EBAB4B /* DataPoint.swift */,
+				B7BDA6D91DCA624000EBAB4B /* Flags.swift */,
+				B7BDA6DA1DCA624000EBAB4B /* ForecastInfo.swift */,
+				B7BDA6DB1DCA624000EBAB4B /* HttpAddressBuilder.swift */,
+				B7BDA6DC1DCA624000EBAB4B /* WeatherJSONProvider.swift */,
+			);
+			path = "SwiftForecast 2.0";
+			sourceTree = "<group>";
+		};
+		B7BDA6E71DCA89FD00EBAB4B /* Charts */ = {
+			isa = PBXGroup;
+			children = (
+				B7BDA6E81DCA89FD00EBAB4B /* Chart.swift */,
+				B7BDA6E91DCA89FD00EBAB4B /* ChartColors.swift */,
+				B7BDA6EA1DCA89FD00EBAB4B /* ChartSeries.swift */,
+				B7BDA6EB1DCA89FD00EBAB4B /* CubicCurveAlgorithm.swift */,
+			);
+			path = Charts;
+			sourceTree = "<group>";
+		};
+		B7FF14A21DCFE36000D6E3FA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B78EAF5A1DD385F5001626DE /* WeatherIcon.swift */,
+				B7FF14A31DCFE3AA00D6E3FA /* DayCollectionItem.swift */,
+				B7FF14A41DCFE3AA00D6E3FA /* DayCollectionItem.xib */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B7BDA69E1DCA5CA400EBAB4B /* Dawn to Dusk (Mac OS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B7BDA6C21DCA5CA400EBAB4B /* Build configuration list for PBXNativeTarget "Dawn to Dusk (Mac OS)" */;
+			buildPhases = (
+				B7BDA69B1DCA5CA400EBAB4B /* Sources */,
+				B7BDA69C1DCA5CA400EBAB4B /* Frameworks */,
+				B7BDA69D1DCA5CA400EBAB4B /* Resources */,
+				B70A312D1DD0DE9800531613 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Dawn to Dusk (Mac OS)";
+			productName = "Dawn to Dusk (Mac OS)";
+			productReference = B7BDA69F1DCA5CA400EBAB4B /* Dawn to Dusk (Mac OS).app */;
+			productType = "com.apple.product-type.application";
+		};
+		B7BDA6AD1DCA5CA400EBAB4B /* Dawn to Dusk (Mac OS)Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B7BDA6C51DCA5CA400EBAB4B /* Build configuration list for PBXNativeTarget "Dawn to Dusk (Mac OS)Tests" */;
+			buildPhases = (
+				B7BDA6AA1DCA5CA400EBAB4B /* Sources */,
+				B7BDA6AB1DCA5CA400EBAB4B /* Frameworks */,
+				B7BDA6AC1DCA5CA400EBAB4B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B7BDA6B01DCA5CA400EBAB4B /* PBXTargetDependency */,
+			);
+			name = "Dawn to Dusk (Mac OS)Tests";
+			productName = "Dawn to Dusk (Mac OS)Tests";
+			productReference = B7BDA6AE1DCA5CA400EBAB4B /* Dawn to Dusk (Mac OS)Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		B7BDA6B81DCA5CA400EBAB4B /* Dawn to Dusk (Mac OS)UITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B7BDA6C81DCA5CA400EBAB4B /* Build configuration list for PBXNativeTarget "Dawn to Dusk (Mac OS)UITests" */;
+			buildPhases = (
+				B7BDA6B51DCA5CA400EBAB4B /* Sources */,
+				B7BDA6B61DCA5CA400EBAB4B /* Frameworks */,
+				B7BDA6B71DCA5CA400EBAB4B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B7BDA6BB1DCA5CA400EBAB4B /* PBXTargetDependency */,
+			);
+			name = "Dawn to Dusk (Mac OS)UITests";
+			productName = "Dawn to Dusk (Mac OS)UITests";
+			productReference = B7BDA6B91DCA5CA400EBAB4B /* Dawn to Dusk (Mac OS)UITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B7BDA6971DCA5CA400EBAB4B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0810;
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = "Nick Hayward";
+				TargetAttributes = {
+					B7BDA69E1DCA5CA400EBAB4B = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = CU49YR9KXZ;
+						ProvisioningStyle = Automatic;
+					};
+					B7BDA6AD1DCA5CA400EBAB4B = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = CU49YR9KXZ;
+						ProvisioningStyle = Automatic;
+						TestTargetID = B7BDA69E1DCA5CA400EBAB4B;
+					};
+					B7BDA6B81DCA5CA400EBAB4B = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = CU49YR9KXZ;
+						ProvisioningStyle = Automatic;
+						TestTargetID = B7BDA69E1DCA5CA400EBAB4B;
+					};
+				};
+			};
+			buildConfigurationList = B7BDA69A1DCA5CA400EBAB4B /* Build configuration list for PBXProject "Dawn to Dusk (Mac OS)" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B7BDA6961DCA5CA400EBAB4B;
+			productRefGroup = B7BDA6A01DCA5CA400EBAB4B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B7BDA69E1DCA5CA400EBAB4B /* Dawn to Dusk (Mac OS) */,
+				B7BDA6AD1DCA5CA400EBAB4B /* Dawn to Dusk (Mac OS)Tests */,
+				B7BDA6B81DCA5CA400EBAB4B /* Dawn to Dusk (Mac OS)UITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B7BDA69D1DCA5CA400EBAB4B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B7BDA6A51DCA5CA400EBAB4B /* Assets.xcassets in Resources */,
+				B7BDA6CE1DCA5D1800EBAB4B /* WeatherViewController.xib in Resources */,
+				B7BDA6A81DCA5CA400EBAB4B /* MainMenu.xib in Resources */,
+				B7FF14A61DCFE3AA00D6E3FA /* DayCollectionItem.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B7BDA6AC1DCA5CA400EBAB4B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B7BDA6B71DCA5CA400EBAB4B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B70A312D1DD0DE9800531613 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n    echo \"Add Swiftlint\"\n#swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B7BDA69B1DCA5CA400EBAB4B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B70F3BF11DCE3C86006D63A0 /* EventMonitor.swift in Sources */,
+				B7BDA6D11DCA5E4800EBAB4B /* StatusMenuController.swift in Sources */,
+				B7BDA6E21DCA624000EBAB4B /* ForecastInfo.swift in Sources */,
+				B7BDA6E31DCA624000EBAB4B /* HttpAddressBuilder.swift in Sources */,
+				B7BDA6DF1DCA624000EBAB4B /* DataBlock.swift in Sources */,
+				B7BDA6A31DCA5CA400EBAB4B /* AppDelegate.swift in Sources */,
+				B7BDA6E11DCA624000EBAB4B /* Flags.swift in Sources */,
+				B7BDA6EF1DCA89FD00EBAB4B /* CubicCurveAlgorithm.swift in Sources */,
+				B7BDA6DD1DCA624000EBAB4B /* Alert.swift in Sources */,
+				B7FF14A51DCFE3AA00D6E3FA /* DayCollectionItem.swift in Sources */,
+				B7BDA6EC1DCA89FD00EBAB4B /* Chart.swift in Sources */,
+				B7BDA6DE1DCA624000EBAB4B /* DarkSkyForecast.swift in Sources */,
+				B7BDA6E41DCA624000EBAB4B /* WeatherJSONProvider.swift in Sources */,
+				B7BDA6ED1DCA89FD00EBAB4B /* ChartColors.swift in Sources */,
+				B7BDA6E61DCA779300EBAB4B /* BackgroundController.swift in Sources */,
+				B78EAF5B1DD385F5001626DE /* WeatherIcon.swift in Sources */,
+				B7BDA6EE1DCA89FD00EBAB4B /* ChartSeries.swift in Sources */,
+				B7BDA6E01DCA624000EBAB4B /* DataPoint.swift in Sources */,
+				B7BDA6CD1DCA5D1800EBAB4B /* WeatherViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B7BDA6AA1DCA5CA400EBAB4B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B7BDA6B31DCA5CA400EBAB4B /* Dawn_to_Dusk__Mac_OS_Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B7BDA6B51DCA5CA400EBAB4B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B7BDA6BE1DCA5CA400EBAB4B /* Dawn_to_Dusk__Mac_OS_UITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B7BDA6B01DCA5CA400EBAB4B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B7BDA69E1DCA5CA400EBAB4B /* Dawn to Dusk (Mac OS) */;
+			targetProxy = B7BDA6AF1DCA5CA400EBAB4B /* PBXContainerItemProxy */;
+		};
+		B7BDA6BB1DCA5CA400EBAB4B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B7BDA69E1DCA5CA400EBAB4B /* Dawn to Dusk (Mac OS) */;
+			targetProxy = B7BDA6BA1DCA5CA400EBAB4B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B7BDA6A61DCA5CA400EBAB4B /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B7BDA6A71DCA5CA400EBAB4B /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B7BDA6C01DCA5CA400EBAB4B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		B7BDA6C11DCA5CA400EBAB4B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+			};
+			name = Release;
+		};
+		B7BDA6C31DCA5CA400EBAB4B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = CU49YR9KXZ;
+				INFOPLIST_FILE = "Dawn to Dusk (Mac OS)/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = "TekuIndustries.Dawn-to-Dusk--Mac-OS-";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		B7BDA6C41DCA5CA400EBAB4B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = CU49YR9KXZ;
+				INFOPLIST_FILE = "Dawn to Dusk (Mac OS)/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = "TekuIndustries.Dawn-to-Dusk--Mac-OS-";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		B7BDA6C61DCA5CA400EBAB4B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = CU49YR9KXZ;
+				INFOPLIST_FILE = "Dawn to Dusk (Mac OS)Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "TekuIndustries.Dawn-to-Dusk--Mac-OS-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Dawn to Dusk (Mac OS).app/Contents/MacOS/Dawn to Dusk (Mac OS)";
+			};
+			name = Debug;
+		};
+		B7BDA6C71DCA5CA400EBAB4B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = CU49YR9KXZ;
+				INFOPLIST_FILE = "Dawn to Dusk (Mac OS)Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "TekuIndustries.Dawn-to-Dusk--Mac-OS-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Dawn to Dusk (Mac OS).app/Contents/MacOS/Dawn to Dusk (Mac OS)";
+			};
+			name = Release;
+		};
+		B7BDA6C91DCA5CA400EBAB4B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = CU49YR9KXZ;
+				INFOPLIST_FILE = "Dawn to Dusk (Mac OS)UITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "TekuIndustries.Dawn-to-Dusk--Mac-OS-UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = "Dawn to Dusk (Mac OS)";
+			};
+			name = Debug;
+		};
+		B7BDA6CA1DCA5CA400EBAB4B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = CU49YR9KXZ;
+				INFOPLIST_FILE = "Dawn to Dusk (Mac OS)UITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "TekuIndustries.Dawn-to-Dusk--Mac-OS-UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = "Dawn to Dusk (Mac OS)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B7BDA69A1DCA5CA400EBAB4B /* Build configuration list for PBXProject "Dawn to Dusk (Mac OS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B7BDA6C01DCA5CA400EBAB4B /* Debug */,
+				B7BDA6C11DCA5CA400EBAB4B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B7BDA6C21DCA5CA400EBAB4B /* Build configuration list for PBXNativeTarget "Dawn to Dusk (Mac OS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B7BDA6C31DCA5CA400EBAB4B /* Debug */,
+				B7BDA6C41DCA5CA400EBAB4B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B7BDA6C51DCA5CA400EBAB4B /* Build configuration list for PBXNativeTarget "Dawn to Dusk (Mac OS)Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B7BDA6C61DCA5CA400EBAB4B /* Debug */,
+				B7BDA6C71DCA5CA400EBAB4B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B7BDA6C81DCA5CA400EBAB4B /* Build configuration list for PBXNativeTarget "Dawn to Dusk (Mac OS)UITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B7BDA6C91DCA5CA400EBAB4B /* Debug */,
+				B7BDA6CA1DCA5CA400EBAB4B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B7BDA6971DCA5CA400EBAB4B /* Project object */;
+}

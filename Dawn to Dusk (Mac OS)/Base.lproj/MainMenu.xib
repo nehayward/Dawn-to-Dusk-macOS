@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2657" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11542"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
+            <connections>
+                <outlet property="delegate" destination="Voe-Tx-rLC" id="GzC-gU-4Uq"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Dawn_to_Dusk__Mac_OS_" customModuleProvider="target"/>
+        <customObject id="ryE-ct-gil" customClass="StatusMenuController" customModule="Dawn_to_Dusk__Mac_OS_" customModuleProvider="target">
+            <connections>
+                <outlet property="contextMenu" destination="Eaf-cC-prR" id="umB-sw-mbi"/>
+            </connections>
+        </customObject>
+        <menu id="Eaf-cC-prR">
+            <items>
+                <menuItem title="Quit" id="BK1-gh-L2r">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="quitClickedWithSender:" target="ryE-ct-gil" id="9w0-sf-180"/>
+                    </connections>
+                </menuItem>
+            </items>
+            <point key="canvasLocation" x="29.5" y="73.5"/>
+        </menu>
+    </objects>
+</document>
