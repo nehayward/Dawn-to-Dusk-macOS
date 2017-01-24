@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		B70F3BF11DCE3C86006D63A0 /* EventMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70F3BF01DCE3C86006D63A0 /* EventMonitor.swift */; };
+		B724C6B01E00A5C100578887 /* PFMoveApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = B724C6AF1E00A5C100578887 /* PFMoveApplication.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		B778D8151DD63ACD0043D0AE /* vancouver.json in Resources */ = {isa = PBXBuildFile; fileRef = B778D8141DD63ACD0043D0AE /* vancouver.json */; };
 		B78EAF5B1DD385F5001626DE /* WeatherIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78EAF5A1DD385F5001626DE /* WeatherIcon.swift */; };
 		B7BDA6A31DCA5CA400EBAB4B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BDA6A21DCA5CA400EBAB4B /* AppDelegate.swift */; };
 		B7BDA6A51DCA5CA400EBAB4B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7BDA6A41DCA5CA400EBAB4B /* Assets.xcassets */; };
@@ -53,6 +55,10 @@
 
 /* Begin PBXFileReference section */
 		B70F3BF01DCE3C86006D63A0 /* EventMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventMonitor.swift; sourceTree = "<group>"; };
+		B724C6AD1E00A5C000578887 /* Dawn to Dusk (Mac OS)-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Dawn to Dusk (Mac OS)-Bridging-Header.h"; sourceTree = "<group>"; };
+		B724C6AE1E00A5C100578887 /* PFMoveApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFMoveApplication.h; sourceTree = "<group>"; };
+		B724C6AF1E00A5C100578887 /* PFMoveApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFMoveApplication.m; sourceTree = "<group>"; };
+		B778D8141DD63ACD0043D0AE /* vancouver.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = vancouver.json; path = ../vancouver.json; sourceTree = "<group>"; };
 		B78EAF5A1DD385F5001626DE /* WeatherIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherIcon.swift; sourceTree = "<group>"; };
 		B7BDA69F1DCA5CA400EBAB4B /* Dawn to Dusk (Mac OS).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dawn to Dusk (Mac OS).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7BDA6A21DCA5CA400EBAB4B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -110,6 +116,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B724C6AC1E00A5B400578887 /* Move */ = {
+			isa = PBXGroup;
+			children = (
+				B724C6AE1E00A5C100578887 /* PFMoveApplication.h */,
+				B724C6AF1E00A5C100578887 /* PFMoveApplication.m */,
+				B724C6AD1E00A5C000578887 /* Dawn to Dusk (Mac OS)-Bridging-Header.h */,
+			);
+			name = Move;
+			sourceTree = "<group>";
+		};
 		B7BDA6961DCA5CA400EBAB4B = {
 			isa = PBXGroup;
 			children = (
@@ -139,6 +155,7 @@
 				B7BDA6CB1DCA5D1800EBAB4B /* WeatherViewController.swift */,
 				B70F3BF01DCE3C86006D63A0 /* EventMonitor.swift */,
 				B7BDA6CC1DCA5D1800EBAB4B /* WeatherViewController.xib */,
+				B724C6AC1E00A5B400578887 /* Move */,
 				B7FF14A21DCFE36000D6E3FA /* Resources */,
 				B7BDA6E51DCA779300EBAB4B /* BackgroundController.swift */,
 				B7BDA6A41DCA5CA400EBAB4B /* Assets.xcassets */,
@@ -179,6 +196,7 @@
 		B7BDA6D41DCA624000EBAB4B /* SwiftForecast 2.0 */ = {
 			isa = PBXGroup;
 			children = (
+				B778D8141DD63ACD0043D0AE /* vancouver.json */,
 				B7BDA6D51DCA624000EBAB4B /* Alert.swift */,
 				B7BDA6D61DCA624000EBAB4B /* DarkSkyForecast.swift */,
 				B7BDA6D71DCA624000EBAB4B /* DataBlock.swift */,
@@ -282,6 +300,7 @@
 					B7BDA69E1DCA5CA400EBAB4B = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = CU49YR9KXZ;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 					B7BDA6AD1DCA5CA400EBAB4B = {
@@ -323,6 +342,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B778D8151DD63ACD0043D0AE /* vancouver.json in Resources */,
 				B7BDA6A51DCA5CA400EBAB4B /* Assets.xcassets in Resources */,
 				B7BDA6CE1DCA5D1800EBAB4B /* WeatherViewController.xib in Resources */,
 				B7BDA6A81DCA5CA400EBAB4B /* MainMenu.xib in Resources */,
@@ -374,6 +394,7 @@
 				B7BDA6DF1DCA624000EBAB4B /* DataBlock.swift in Sources */,
 				B7BDA6A31DCA5CA400EBAB4B /* AppDelegate.swift in Sources */,
 				B7BDA6E11DCA624000EBAB4B /* Flags.swift in Sources */,
+				B724C6B01E00A5C100578887 /* PFMoveApplication.m in Sources */,
 				B7BDA6EF1DCA89FD00EBAB4B /* CubicCurveAlgorithm.swift in Sources */,
 				B7BDA6DD1DCA624000EBAB4B /* Alert.swift in Sources */,
 				B7FF14A51DCFE3AA00D6E3FA /* DayCollectionItem.swift in Sources */,
@@ -526,6 +547,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = CU49YR9KXZ;
 				INFOPLIST_FILE = "Dawn to Dusk (Mac OS)/Info.plist";
@@ -533,6 +555,8 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = "TekuIndustries.Dawn-to-Dusk--Mac-OS-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Dawn to Dusk (Mac OS)/Dawn to Dusk (Mac OS)-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -541,6 +565,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = CU49YR9KXZ;
 				INFOPLIST_FILE = "Dawn to Dusk (Mac OS)/Info.plist";
@@ -548,6 +573,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = "TekuIndustries.Dawn-to-Dusk--Mac-OS-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Dawn to Dusk (Mac OS)/Dawn to Dusk (Mac OS)-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

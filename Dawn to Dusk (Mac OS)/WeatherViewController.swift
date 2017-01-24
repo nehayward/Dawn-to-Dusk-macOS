@@ -13,6 +13,7 @@ class WeatherViewController: NSViewController {
   let locationManager = CLLocationManager()
   let darkskyAPIKey = "c1be9a9ebe32129386dd862f15afb522"
   
+  @IBOutlet var parentCollectionView: NSScrollView!
   @IBOutlet var weekViewCollection: NSCollectionView!
   @IBOutlet var infoStack: NSStackView!
   @IBOutlet var cityNameLabel: NSTextField!
@@ -37,11 +38,14 @@ class WeatherViewController: NSViewController {
   @IBOutlet var windLabel: NSTextField!
   @IBOutlet var sunPositionIcon: NSImageView!
   @IBOutlet var sunTimeLabel: NSTextField!
+  @IBOutlet var helperText: NSTextField!
   
   
   
   
   var hourlyBlock: DataBlock?
+  var dailyBlock: DataBlock?
+
   var time: [String] = []
   
   @IBOutlet var labelLeadingMarginConstraint: NSLayoutConstraint!
@@ -52,7 +56,8 @@ class WeatherViewController: NSViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    weekViewCollection.isHidden = false
+    parentCollectionView.isHidden = true
+//    weekViewCollection.isHidden = false
     initTable()
     // Do view setup here.
     chart = Chart(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 150))
@@ -60,20 +65,26 @@ class WeatherViewController: NSViewController {
     chart.delegate = self
     self.view.addSubview(chart)
 
-
+    
 //    infoStack.arrangedSubviews[0].isHidden = true
     
     self.view.acceptsTouchEvents = true
     
     DispatchQueue.main.async {
-      
+    
       self.location()
     }
+
+//    setWeather("", long: "", city: "Redmond")
+    
     //    setUpBackground()
     
-    Timer.scheduledTimer(timeInterval: 60 * 45, target: self, selector: #selector(WeatherViewController.sayHello), userInfo: nil, repeats: true)
+    Timer.scheduledTimer(timeInterval: 60 * 45, target: self, selector: #selector(WeatherViewController.location), userInfo: nil, repeats: true)
     
 //  
+    
+    // Add Gesture
+
 //    NSAnimationContext.runAnimationGroup({ (context) in
 //      context.duration = 1
 //      windView.animator().alphaValue = 0
@@ -83,8 +94,8 @@ class WeatherViewController: NSViewController {
 //    })
 //  
 //    windView.animator().isHidden = true
+  
     
-
   }
   
   
@@ -144,6 +155,7 @@ class WeatherViewController: NSViewController {
     
     
     hourlyBlock = forecast.hourly
+    dailyBlock = forecast.daily
     
     cityNameLabel.stringValue = city
     //    // Set current variables
@@ -349,6 +361,8 @@ class WeatherViewController: NSViewController {
     //
     //
     
+    
+    
     // Resets Hours to Original
     var hours = forecast.hourly?.dataPoints
     let calendar = Calendar.current
@@ -427,7 +441,7 @@ class WeatherViewController: NSViewController {
     //    // Reload Table Data
     //    //    forecastTable.reloadData()
     //    // TODO: Daily Forecast datapoints
-    //    weekForecastCollection.reloadData()
+        weekViewCollection.reloadData()
     //
     //    // Setup Push Notification
     //    // Push Notification
@@ -437,6 +451,8 @@ class WeatherViewController: NSViewController {
     //
     //    print(forecast.minutely?.summary)
     
+    
+    setMoreInfoStack(time: 0, value: Float(temperature!))
   }
   
   // Set Background
@@ -584,6 +600,38 @@ extension WeatherViewController: CLLocationManagerDelegate{
   }
   
   
+  override func mouseUp(with event: NSEvent) {
+    let locationInView = view.convert(event.locationInWindow, from: nil)
+
+    if locationInView.y < chart.frame.height || locationInView.y < weekViewCollection.frame.height{
+      swapChartCollection()
+    }
+  }
+  
+  override func mouseDown(with event: NSEvent) {
+    let locationInView = view.convert(event.locationInWindow, from: nil)
+    
+    if locationInView.y < chart.frame.height || locationInView.y < weekViewCollection.frame.height{
+//      if (event.clickCount > 1){
+        swapChartCollection()
+//      }
+    }
+  }
+
+  
+  func swapChartCollection(){
+    
+    helperText.removeFromSuperview()
+    self.didFinishTouchingChart(chart)
+    if parentCollectionView.isHidden{
+      timeLabel.stringValue = ""
+      parentCollectionView.isHidden = false
+      chart.isHidden = true
+    }else {
+      chart.isHidden = false
+      parentCollectionView.isHidden = true
+    }
+  }
   
   
   
@@ -622,6 +670,9 @@ extension WeatherViewController: ChartDelegate{
       return
     }
     
+    if indexes.count < 0 {
+      return
+    }
     if let value = chart.valueForSeries(0, atIndex: indexes[0]) {
       let labelLeadingMarginInitialConstant = CGFloat(0)
 
@@ -664,41 +715,72 @@ extension WeatherViewController: ChartDelegate{
 
     // Set Weather Icon Image
     var moonPhase = 0.0
-    let uv = hourlyBlock?.dataPoints[time].uvIndex
+    var uv = 0.0
     
     if let phase = hourlyBlock?.dataPoints[time].moonPhase {
       moonPhase = phase
     }
+    
+    if let uvIndex = hourlyBlock?.dataPoints[time].uvIndex {
+      uv = uvIndex
+    }
+
+    
    
     let icon = hourlyBlock?.dataPoints[time].icon
+    let precipIntensity = hourlyBlock?.dataPoints[time].precipIntensity
+    let precipProb = hourlyBlock?.dataPoints[time].precipProbability
     
-    weatherImageView.image = NSImage(named: WeatherIcon().iconName(icon: icon!, uv: uv!, moonphase: moonPhase))
+    weatherImageView.image = NSImage(named: WeatherIcon().iconName(icon: icon!, uv: uv, moonphase: moonPhase))
     
-    var myString = "Medium"
-    let precip = String(format: "%\(0.3)f", (hourlyBlock?.dataPoints[time].precipIntensity)!)
+    var myString = "Drizzle"
+    let precip = String(format: "%\(0.3)f", precipIntensity!)
     
-    myString.append(" \(precip) in/h")
     var myMutableString = NSMutableAttributedString()
+    
+    
+    // Heavy .10 > Medium > .06 Light > .0397 Drizzle > .0065
+    var b = NSColor(calibratedRed: 117/256, green: 180/256, blue: 217/256, alpha: 1)
+
+    switch precipIntensity!{
+    case 0.0..<0.0065:
+      myString = "Drizzle"
+    case 0.0065...0.037:
+      myString = "Light"
+    case 0.037...0.06:
+      myString = "Medium"
+      b = NSColor(calibratedRed: 10/256, green: 57/256, blue: 260/256, alpha: 1)
+
+    default:
+      myString = "Heavy"
+      b = NSColor(calibratedRed: 0/256, green: 0/256, blue: 70/256, alpha: 1)
+
+    }
+    
     
     myMutableString = NSMutableAttributedString(string: myString, attributes: nil)
     //117	180	217
-    let b = NSColor(calibratedRed: 117/256, green: 180/256, blue: 217/256, alpha: 1)
-    myMutableString.addAttribute(NSForegroundColorAttributeName, value: b, range: NSRange(location:0,length:5))
+    myMutableString.addAttribute(NSForegroundColorAttributeName, value: b, range: NSRange(location:0,length:myString.characters.count))
     
+    myMutableString.append(NSAttributedString(string: " \(precip) in/h"))
+  
     precipLabel.attributedStringValue = myMutableString
-    
-    
-    //      infoStack.subviews[0].isHidden = true
-    // Heavy .10 > Medium > .06 Light > .0397 Drizzle > .0065
-    
+
 
     // Add some padding above the x-axis
-    
     temperatureLabel.stringValue = String(format: "%.0f", value)
     windLabel.stringValue = String(format: "%.0f mph", (hourlyBlock?.dataPoints[time].windSpeed)!)
     humidityLabel.stringValue = String(format: "%.0f%%", ((hourlyBlock?.dataPoints[time].humidity)!*100))
-//    precipLabel.stringValue = String(format: "%.0f%%", (hourlyBlock?.dataPoints[time].precipProbability)!)
-    uvLabel.stringValue = String(format: "%.0f", (hourlyBlock?.dataPoints[time].uvIndex)!)
+    
+    if precipIntensity! < 0.04{
+      precipLabel.stringValue = String(format: "%.0f%%", precipProb!*100)
+    }
+    
+    if uv > 0{
+      uvLabel.stringValue = String(format: "%.0f", (hourlyBlock?.dataPoints[time].uvIndex)!)
+    } else {
+      infoStack.arrangedSubviews[2].isHidden = true
+    }
   }
   
   
@@ -748,6 +830,7 @@ extension WeatherViewController: ChartDelegate{
   
 }
 
+
 extension WeatherViewController: NSCollectionViewDataSource, NSCollectionViewDelegate{
 
 
@@ -759,16 +842,22 @@ extension WeatherViewController: NSCollectionViewDataSource, NSCollectionViewDel
     // 3
 //    weekViewCollection.layer?.backgroundColor = NSColor.red.cgColor
     
-    
+    configureCollectionView()
   }
+  
 
   func numberOfSections(in collectionView: NSCollectionView) -> Int {
     return 1
   }
   
   func collectionView(_ collectionView: NSCollectionView, numberOfItemsInSection section: Int) -> Int {
-    return 4
+    if dailyBlock != nil {
+      return (dailyBlock?.dataPoints.count)!
+    }
+    return 0
   }
+  
+
   
   func collectionView(_ collectionView: NSCollectionView, itemForRepresentedObjectAt indexPath: IndexPath) -> NSCollectionViewItem {
     
@@ -776,38 +865,45 @@ extension WeatherViewController: NSCollectionViewDataSource, NSCollectionViewDel
     let item = collectionView.makeItem(withIdentifier: "DayCollectionItem", for: indexPath)
     
     
-    guard item is DayCollectionItem else {
-      
-      return item
-    }
-//    item.view.layer?.backgroundColor = NSColor.red.cgColor
+    guard let collectionViewItem = item as? DayCollectionItem else { return item }
+    
+    collectionViewItem.weekdayLabel.stringValue = "HEY"
+    collectionViewItem.view.layer?.backgroundColor = NSColor.clear.cgColor
+
+    collectionViewItem.setData(data: (dailyBlock?.dataPoints[indexPath.item])!)
+    
+    
+    
     // 5
     return item
   }
   
+  func configureCollectionView() {
+    // 1
+    let flowLayout = NSCollectionViewFlowLayout()
+    flowLayout.itemSize = NSSize(width: 80, height: 125)
+    flowLayout.sectionInset = EdgeInsets(top: 5, left: 10, bottom: 5, right: 10)
+    //    flowLayout.minimumInteritemSpacing = 20.0
+    //    flowLayout.minimumLineSpacing = 20.0
+    flowLayout.scrollDirection = .horizontal
+    
+    
+    parentCollectionView.enclosingScrollView?.horizontalScroller?.isHidden = true
+    parentCollectionView.enclosingScrollView?.hasHorizontalScroller = false
+    parentCollectionView.enclosingScrollView?.hasVerticalScroller = false
+    parentCollectionView.enclosingScrollView?.horizontalScroller = nil
+    
+    weekViewCollection.collectionViewLayout = flowLayout
+    
+    weekViewCollection.enclosingScrollView?.hasHorizontalScroller = false
+    weekViewCollection.enclosingScrollView?.hasVerticalScroller = false
+    weekViewCollection.enclosingScrollView?.horizontalScroller = nil
 
-  func getDownloads(){
-    // Get the document directory url
-    let documentsUrl =  FileManager.default.urls(for: .downloadsDirectory, in: .userDomainMask).first!
 
-    do {
-      // Get the directory contents urls (including subfolders urls)
-      let directoryContents = try FileManager.default.contentsOfDirectory(at: documentsUrl, includingPropertiesForKeys: nil, options: [])
-      print(directoryContents)
-
-      //      // if you want to filter the directory contents you can do like this:
-      //      let mp3Files = directoryContents.filter{ $0.pathExtension == "mp3" }
-      //      print("mp3 urls:",mp3Files)
-      //      let mp3FileNames = mp3Files.map{ $0.deletingPathExtension().lastPathComponent }
-      //      print("mp3 list:", mp3FileNames)
-
-//      directoryDownloads = directoryContents
-      weekViewCollection.reloadData()
-
-
-    } catch let error as NSError {
-      print(error.localizedDescription)
-    }
+    // 2
+    view.wantsLayer = true
+    // 3
+    weekViewCollection.layer?.backgroundColor = NSColor.clear.cgColor
   }
   
   

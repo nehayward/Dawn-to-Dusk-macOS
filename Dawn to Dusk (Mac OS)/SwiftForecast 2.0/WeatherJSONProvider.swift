@@ -48,6 +48,18 @@ class WeatherJSONProvider {
       sem.signal()
     }).resume()
     sem.wait(timeout: DispatchTime.distantFuture)
+    
+  
+// MARK: Uncomment for json data
+//        var responseData = Data()
+//
+//    if let url = Bundle.main.url(forResource: "vancouver", withExtension: "json") {
+//      if let data = NSData(contentsOf: url) {
+//        responseData = data as Data
+//      }
+//    }
+    
+    
     return responseData
   }
 }

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2657" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="11761" systemVersion="16B2657" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11542"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11761"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
         <capability name="stacking Non-gravity area distributions on NSStackView" minToolsVersion="7.0" minSystemVersion="10.11"/>
     </dependencies>
@@ -10,9 +10,11 @@
         <customObject id="-2" userLabel="File's Owner" customClass="WeatherViewController" customModule="Dawn_to_Dusk__Mac_OS_" customModuleProvider="target">
             <connections>
                 <outlet property="cityNameLabel" destination="MK2-gz-SXH" id="6yt-sm-R2q"/>
+                <outlet property="helperText" destination="MWg-7v-aCi" id="1pT-2f-WAm"/>
                 <outlet property="humidityLabel" destination="MPU-9l-fDr" id="yU8-uC-A2b"/>
                 <outlet property="infoStack" destination="vpo-Rv-Tbu" id="OxI-Ud-9vn"/>
                 <outlet property="labelLeadingMarginConstraint" destination="eJg-Xd-oAk" id="UoS-ZL-yrk"/>
+                <outlet property="parentCollectionView" destination="a8U-9c-lD8" id="xZh-zt-mny"/>
                 <outlet property="precipIcon" destination="aqA-Im-iPf" id="d8L-la-377"/>
                 <outlet property="precipLabel" destination="u97-Zq-lUk" id="iiQ-Bl-dO9"/>
                 <outlet property="summaryLabel" destination="7Sr-Rl-xvR" id="vEL-fF-lVe"/>
@@ -99,41 +101,11 @@
                         <real value="3.4028234663852886e+38"/>
                     </customSpacing>
                 </stackView>
-                <scrollView hidden="YES" wantsLayer="YES" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a8U-9c-lD8">
-                    <rect key="frame" x="0.0" y="0.0" width="453" height="171"/>
-                    <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="krt-e1-CF6">
-                        <rect key="frame" x="1" y="1" width="451" height="169"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <collectionView hidden="YES" id="fb1-uv-Fi8">
-                                <rect key="frame" x="0.0" y="0.0" width="451" height="169"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumInteritemSpacing="10" minimumLineSpacing="10" scrollDirection="horizontal" id="flb-3q-geM">
-                                    <size key="itemSize" width="50" height="50"/>
-                                </collectionViewFlowLayout>
-                                <color key="primaryBackgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="Hz6-mo-xeY" id="qdb-Ub-iJx"/>
-                                    <outlet property="delegate" destination="Hz6-mo-xeY" id="Ycu-aS-fgl"/>
-                                </connections>
-                            </collectionView>
-                        </subviews>
-                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                    </clipView>
-                    <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="Bff-3S-557">
-                        <rect key="frame" x="1" y="154" width="0.0" height="16"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </scroller>
-                    <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="TU9-1B-lIe">
-                        <rect key="frame" x="386" y="1" width="16" height="137"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </scroller>
-                </scrollView>
                 <stackView distribution="fillProportionally" orientation="horizontal" alignment="top" spacing="2" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vpo-Rv-Tbu">
-                    <rect key="frame" x="23.5" y="220" width="406" height="30"/>
+                    <rect key="frame" x="17" y="220" width="417" height="30"/>
                     <subviews>
                         <stackView distribution="fill" orientation="horizontal" alignment="centerY" spacing="2" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bGu-oh-AEZ">
-                            <rect key="frame" x="0.0" y="0.0" width="114" height="30"/>
+                            <rect key="frame" x="0.0" y="0.0" width="125" height="30"/>
                             <subviews>
                                 <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MQF-GC-jDj">
                                     <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
@@ -144,8 +116,8 @@
                                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="rainyday" id="R0C-tZ-bYC"/>
                                 </imageView>
                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="u97-Zq-lUk">
-                                    <rect key="frame" x="32" y="6.5" width="82" height="17"/>
-                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Light (2 in/h)" drawsBackground="YES" id="OfM-B4-6fX">
+                                    <rect key="frame" x="32" y="6.5" width="93" height="17"/>
+                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Light (0.2 in/h)" drawsBackground="YES" id="OfM-B4-6fX">
                                         <font key="font" metaFont="system"/>
                                         <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
@@ -162,7 +134,7 @@
                             </customSpacing>
                         </stackView>
                         <stackView distribution="fill" orientation="horizontal" alignment="centerY" spacing="2" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="J5D-2R-UcX">
-                            <rect key="frame" x="116" y="0.0" width="114" height="30"/>
+                            <rect key="frame" x="127" y="0.0" width="114" height="30"/>
                             <subviews>
                                 <stackView distribution="fill" orientation="horizontal" alignment="centerY" spacing="2" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gEh-Zi-uya">
                                     <rect key="frame" x="0.0" y="0.0" width="61" height="30"/>
@@ -205,7 +177,7 @@
                                     <rect key="frame" x="95" y="6.5" width="19" height="17"/>
                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="10" drawsBackground="YES" id="FVa-Iq-4Tx">
                                         <font key="font" metaFont="system"/>
-                                        <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                     </textFieldCell>
                                 </textField>
@@ -222,7 +194,7 @@
                             </customSpacing>
                         </stackView>
                         <stackView distribution="fill" orientation="horizontal" alignment="centerY" spacing="2" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g7m-NA-mS4">
-                            <rect key="frame" x="232" y="0.0" width="174" height="30"/>
+                            <rect key="frame" x="243" y="0.0" width="174" height="30"/>
                             <subviews>
                                 <stackView distribution="fill" orientation="horizontal" alignment="centerY" spacing="2" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qa5-h8-9FQ">
                                     <rect key="frame" x="0.0" y="0.0" width="85" height="30"/>
@@ -293,17 +265,60 @@
                         <real value="3.4028234663852886e+38"/>
                     </customSpacing>
                 </stackView>
+                <scrollView wantsLayer="YES" borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasVerticalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a8U-9c-lD8">
+                    <rect key="frame" x="0.0" y="0.0" width="451" height="139"/>
+                    <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="krt-e1-CF6">
+                        <rect key="frame" x="0.0" y="0.0" width="451" height="139"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView id="fb1-uv-Fi8">
+                                <rect key="frame" x="0.0" y="0.0" width="451" height="139"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumInteritemSpacing="10" minimumLineSpacing="10" scrollDirection="horizontal" id="flb-3q-geM">
+                                    <size key="itemSize" width="50" height="50"/>
+                                </collectionViewFlowLayout>
+                                <color key="primaryBackgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Hz6-mo-xeY" id="qdb-Ub-iJx"/>
+                                    <outlet property="delegate" destination="Hz6-mo-xeY" id="Ycu-aS-fgl"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                    </clipView>
+                    <scroller key="horizontalScroller" verticalHuggingPriority="750" tag="-1" arrowsPosition="none" horizontal="YES" id="Bff-3S-557">
+                        <rect key="frame" x="0.0" y="123" width="451" height="16"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </scroller>
+                    <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="TU9-1B-lIe">
+                        <rect key="frame" x="-100" y="-100" width="16" height="137"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </scroller>
+                </scrollView>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MWg-7v-aCi">
+                    <rect key="frame" x="121" y="164" width="210" height="17"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="206" id="U63-Ro-GmI"/>
+                    </constraints>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Click Graph For Week Forecast" id="H0W-H3-Mip">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="secondarySelectedControlColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
             </subviews>
             <constraints>
-                <constraint firstItem="a8U-9c-lD8" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="3dO-0R-IR4"/>
+                <constraint firstItem="a8U-9c-lD8" firstAttribute="top" secondItem="vpo-Rv-Tbu" secondAttribute="bottom" constant="81" id="1j9-ln-k0c"/>
+                <constraint firstItem="a8U-9c-lD8" firstAttribute="centerX" secondItem="vpo-Rv-Tbu" secondAttribute="centerX" id="9gh-4g-Xd3"/>
                 <constraint firstItem="vpo-Rv-Tbu" firstAttribute="top" secondItem="hp3-yy-Q2Y" secondAttribute="bottom" constant="8" symbolic="YES" id="Guv-J9-7RN"/>
                 <constraint firstItem="vpo-Rv-Tbu" firstAttribute="centerX" secondItem="hp3-yy-Q2Y" secondAttribute="centerX" id="Hzi-VB-LrC"/>
-                <constraint firstItem="a8U-9c-lD8" firstAttribute="top" secondItem="oLX-jN-FKJ" secondAttribute="bottom" constant="-24" id="XkY-WE-vkA"/>
-                <constraint firstAttribute="bottom" secondItem="a8U-9c-lD8" secondAttribute="bottom" id="bvs-Iv-ayp"/>
+                <constraint firstAttribute="bottom" secondItem="a8U-9c-lD8" secondAttribute="bottom" id="Myp-CI-X9o"/>
+                <constraint firstItem="MWg-7v-aCi" firstAttribute="centerX" secondItem="vpo-Rv-Tbu" secondAttribute="centerX" id="ZC1-kc-8BH"/>
                 <constraint firstItem="hp3-yy-Q2Y" firstAttribute="centerX" secondItem="Hz6-mo-xeY" secondAttribute="centerX" id="cax-30-V1q"/>
                 <constraint firstAttribute="bottom" secondItem="oLX-jN-FKJ" secondAttribute="bottom" constant="147" id="d8q-He-5hg"/>
                 <constraint firstItem="oLX-jN-FKJ" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="2" id="eJg-Xd-oAk"/>
-                <constraint firstItem="vpo-Rv-Tbu" firstAttribute="centerX" secondItem="a8U-9c-lD8" secondAttribute="centerX" id="mLD-Zf-X4n"/>
+                <constraint firstItem="a8U-9c-lD8" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="f7o-Cv-wkP"/>
+                <constraint firstItem="a8U-9c-lD8" firstAttribute="top" secondItem="MWg-7v-aCi" secondAttribute="bottom" constant="25" id="lkr-df-fjh"/>
                 <constraint firstItem="hp3-yy-Q2Y" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="20" symbolic="YES" id="nOq-rO-ZMd"/>
             </constraints>
             <point key="canvasLocation" x="64.5" y="301"/>

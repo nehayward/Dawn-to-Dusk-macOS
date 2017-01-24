@@ -20,7 +20,7 @@ class StatusMenuController: NSObject {
   
   override func awakeFromNib() {
     
-    let kStatusIcon = "statusIcon"
+    let kStatusIcon = "Oval"
 
     if let button = statusItem.button {
       button.image = NSImage(named: kStatusIcon)
@@ -41,7 +41,7 @@ class StatusMenuController: NSObject {
         self.closePopover(sender: event)
       }
     }
-//    eventMonitor?.start()
+    eventMonitor?.start()
     
   }
   
